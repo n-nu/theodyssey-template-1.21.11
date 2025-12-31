@@ -5,6 +5,8 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import nanu4.world.gen.ModWorldGeneration;
+
 public class Theodyssey implements ModInitializer {
 	public static final String MOD_ID = "theodyssey";
 
@@ -15,9 +17,8 @@ public class Theodyssey implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		ModWorldGeneration.generateModWorldGeneration(); //Initialize Mod World Generator
+		
 
 		LOGGER.info("An arduous adventure awaits! (nanu4's Odyssey)");
 	}
